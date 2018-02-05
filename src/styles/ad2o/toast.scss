@@ -74,20 +74,21 @@ $alert-icon-transform: translate(-50%, 0);
             position: absolute;
             top: 0;
             left: 50%;
-            width: 12rem;
+            width: 16rem;
             height: auto;
-            -webkit-transform: translate(-50%, -40%);
-            transform: translate(-50%, -40%);
+            -webkit-transform: translate(-50%, -45%);
+            transform: translate(-50%, -45%);
         }
     }
     &__title {
-        font-size: 1.8em;
+        font-size: 1.4em;
         line-height: 1.2em;
         margin: .5rem auto;
         color: $toast-title-color;
     }
     &__body {
-        font-size: 1.2em;
+        font-size: 1.1em;
+        font-weight: 300;
         color: $toast-body-color;
     }
 }
