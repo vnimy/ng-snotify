@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { SnotifyService, SnotifyPosition, SnotifyToastConfig } from 'ng-snotify';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ export class AppComponent {
   titleMaxLength = 15;
   bodyMaxLength = 80;
 
-  constructor(private snotifyService: SnotifyService) {}
+  constructor(private snotifyService: SnotifyService) { }
 
   /*
   Change global configuration
@@ -110,7 +110,7 @@ export class AppComponent {
       More information how to work with observables:
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
-    const {timeout, ...config} = this.getConfig(); // Omit timeout
+    const { timeout, ...config } = this.getConfig(); // Omit timeout
     this.snotifyService.async('This will resolve with error', 'Async', errorAction, config);
     this.snotifyService.async('This will resolve with success', successAction, config);
     this.snotifyService.async('Called with promise', 'Error async',
@@ -130,14 +130,16 @@ export class AppComponent {
     /*
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
-    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
+    const { timeout, closeOnClick, ...config } = this.getConfig(); // Omit props what i don't need
     this.snotifyService.confirm(this.body, this.title, {
       ...config,
       buttons: [
-        {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
+        /* {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
         {text: 'Later', action: (toast) => {console.log('Clicked: Later'); this.snotifyService.remove(toast.id); } },
-        {text: 'Close', action: (toast) => {console.log('Clicked: Close'); this.snotifyService.remove(toast.id); }, bold: true},
+        {text: 'Close', action: (toast) => {console.log('Clicked: Close'); this.snotifyService.remove(toast.id); }, bold: true}, */
+        { text: '确认', action: (toast) => { this.snotifyService.remove(toast.id); } },
+        { text: '关闭', action: (toast) => { this.snotifyService.remove(toast.id); } },
       ]
     });
   }
@@ -148,12 +150,12 @@ export class AppComponent {
      At the action of the first button we can get what user entered into input field.
      At the second we can't get it. But we can remove this toast
      */
-    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
+    const { timeout, closeOnClick, ...config } = this.getConfig(); // Omit props what i don't need
     this.snotifyService.prompt(this.body, this.title, {
       ...config,
       buttons: [
-        {text: 'Yes', action: (toast) => console.log('Said Yes: ' + toast.value) },
-        {text: 'No', action: (toast) => { console.log('Said No: ' + toast.value); this.snotifyService.remove(toast.id); }},
+        { text: 'Yes', action: (toast) => console.log('Said Yes: ' + toast.value) },
+        { text: 'No', action: (toast) => { console.log('Said No: ' + toast.value); this.snotifyService.remove(toast.id); } },
       ],
       placeholder: 'Enter "ng-snotify" to validate this input' // Max-length = 40
     }).on('input', (toast) => {

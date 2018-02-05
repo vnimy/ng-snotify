@@ -1,8 +1,8 @@
-import {SnotifyToastConfig} from '../interfaces/SnotifyToastConfig.interface';
-import {Subject} from 'rxjs/Subject';
-import {SnotifyEvent} from '../types/event.type';
-import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
-import {Subscription} from 'rxjs/Subscription';
+import { SnotifyToastConfig } from '../interfaces/SnotifyToastConfig.interface';
+import { Subject } from 'rxjs/Subject';
+import { SnotifyEvent } from '../types/event.type';
+import { SnotifyStyle } from '../enums/SnotifyStyle.enum';
+import { Subscription } from 'rxjs/Subscription';
 // @TODO remove method in observable way
 /**
  * Toast main model
@@ -28,14 +28,14 @@ export class SnotifyToast {
    * Toast validator
    */
   valid: boolean;
-  constructor (public id: number,
-               public title: string,
-               public body: string,
-               public config: SnotifyToastConfig) {
+  constructor(public id: number,
+    public title: string,
+    public body: string,
+    public config: SnotifyToastConfig) {
     if (this.config.type === SnotifyStyle.prompt) {
       this.value = '';
     }
-    if (this.config.headimg){
+    if (this.config.headimg) {
       this.headimg = this.config.headimg;
     }
     this.on('hidden', () => {
@@ -51,7 +51,7 @@ export class SnotifyToast {
    * @param {(toast: SnotifyToast) => void} action
    * @returns {this}
    */
-  on (event: SnotifyEvent, action: (toast: this) => void): this {
+  on(event: SnotifyEvent, action: (toast: this) => void): this {
     this._eventsHolder.push(
       this.eventEmitter.subscribe((e: SnotifyEvent) => {
         if (e === event) {

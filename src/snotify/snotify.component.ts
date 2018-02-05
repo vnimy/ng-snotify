@@ -83,6 +83,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    */
   stateChanged(event: SnotifyEvent) {
     if (!this.withBackdrop.length) {
+      this.backdrop = -1;
       return;
     }
     switch (event) {
