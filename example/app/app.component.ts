@@ -8,15 +8,16 @@ import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  style = 'material';
+  style = 'ad2o';
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
-  timeout = 3000;
-  position: SnotifyPosition = SnotifyPosition.rightBottom;
-  progressBar = true;
+  timeout = 0;
+  position: SnotifyPosition = SnotifyPosition.centerCenter;
+  progressBar = false;
   closeClick = true;
+  closeClickBackdrop = true;
   newTop = true;
-  backdrop = -1;
+  backdrop = 0.5;
   dockMax = 8;
   blockMax = 6;
   pauseHover = true;
@@ -44,6 +45,7 @@ export class AppComponent {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
+      closeOnClickBackdrop: this.closeClickBackdrop,
       pauseOnHover: this.pauseHover
     };
   }

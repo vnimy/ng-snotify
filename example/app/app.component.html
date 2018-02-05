@@ -75,6 +75,13 @@
         </div>
       </div>
       <div class="switch-wrapper">
+        <strong>Close on click backdrop?</strong>
+        <div class="switch">
+          <input [(ngModel)]="closeClickBackdrop" id="closeClickBackdrop" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+          <label for="closeClickBackdrop" data-on="On" data-off="Off"></label>
+        </div>
+      </div>
+      <div class="switch-wrapper">
         <strong>Pause on hover?</strong>
         <div class="switch">
           <input [(ngModel)]="pauseHover" id="pauseHover" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
@@ -114,6 +121,7 @@
       <div class="row">
         <div class="col-sm-12">
           <select [(ngModel)]="style" id="style" class="form-control">
+            <option [ngValue]="'ad2o'">AD2O</option>
             <option [ngValue]="'material'">Material</option>
             <option [ngValue]="'dark'">Dark</option>
             <option [ngValue]="'simple'">Simple</option>

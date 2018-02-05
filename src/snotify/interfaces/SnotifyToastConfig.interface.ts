@@ -97,6 +97,10 @@ export interface SnotifyToastConfig {
    */
   backdrop?: number;
   /**
+   * 点击backdrop关闭
+   */
+  closeOnClickBackdrop?: boolean;
+  /**
    * Animation config
    * @type {SnotifyAnimate}
    * @default -1

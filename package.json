@@ -4,7 +4,7 @@
   "version": "4.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run link:src && ng serve",
+    "start": "npm run link:src && ng serve --port 4100",
     "example:build": "npm run lib:build && npm run link:dist && ng serve -aot -prod --open",
     "example:build:prod": "npm run lib:build && npm run link:dist && ng build -aot -prod --base-href=/ng-snotify/  --output-path=demo/",
     "example:test": "ng test",

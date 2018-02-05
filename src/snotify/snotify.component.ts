@@ -1,10 +1,10 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {SnotifyService} from './snotify.service';
-import {SnotifyToast} from './toast/snotify-toast.model';
-import {Subscription} from 'rxjs/Subscription';
-import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
-import {SnotifyPosition} from './enums/SnotifyPosition.enum';
-import {SnotifyEvent} from './types/event.type';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { SnotifyService } from './snotify.service';
+import { SnotifyToast } from './toast/snotify-toast.model';
+import { Subscription } from 'rxjs/Subscription';
+import { SnotifyNotifications } from './interfaces/SnotifyNotifications.interface';
+import { SnotifyPosition } from './enums/SnotifyPosition.enum';
+import { SnotifyEvent } from './types/event.type';
 
 
 
@@ -47,7 +47,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    */
   withBackdrop: SnotifyToast[];
 
-  constructor(private service: SnotifyService) {}
+  constructor(private service: SnotifyService) { }
 
   /**
    * Init base options. Subscribe to options, lifecycle change
@@ -127,6 +127,14 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     });
 
     return result;
+  }
+
+  onClickBackdrop() {
+    this.withBackdrop.forEach((toast: SnotifyToast) => {
+      if (toast.config.closeOnClickBackdrop) {
+        this.service.remove(toast.id);
+      }
+    })
   }
 
   /**

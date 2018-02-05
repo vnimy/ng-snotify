@@ -47,19 +47,24 @@ export const ToastDefaults = {
       type: SnotifyStyle.confirm,
     },
     [SnotifyStyle.simple]: {
-      type: SnotifyStyle.simple
+      type: SnotifyStyle.simple,
+      closeOnClickBackdrop: true,
     },
     [SnotifyStyle.success]: {
-      type: SnotifyStyle.success
+      type: SnotifyStyle.success,
+      closeOnClickBackdrop: true,
     },
     [SnotifyStyle.error]: {
-      type: SnotifyStyle.error
+      type: SnotifyStyle.error,
+      closeOnClickBackdrop: true,
     },
     [SnotifyStyle.warning]: {
-      type: SnotifyStyle.warning
+      type: SnotifyStyle.warning,
+      closeOnClickBackdrop: true,
     },
     [SnotifyStyle.info]: {
-      type: SnotifyStyle.info
+      type: SnotifyStyle.info,
+      closeOnClickBackdrop: true,
     },
     [SnotifyStyle.async]: {
       pauseOnHover: false,
