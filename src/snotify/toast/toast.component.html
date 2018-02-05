@@ -16,6 +16,9 @@
   <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
     <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': (state.progress * 100) + '%'}"></span>
   </div>
+  <div class="snotifyToast__headimg" *ngIf="toast.headimg">
+    <img [src]="toast.headimg">
+  </div>
   <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">
     <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
     <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>

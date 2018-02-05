@@ -23,6 +23,7 @@ export class SnotifyToast {
    * Toast prompt value
    */
   value: string;
+  headimg: boolean | string;
   /**
    * Toast validator
    */
@@ -33,6 +34,9 @@ export class SnotifyToast {
                public config: SnotifyToastConfig) {
     if (this.config.type === SnotifyStyle.prompt) {
       this.value = '';
+    }
+    if (this.config.headimg){
+      this.headimg = this.config.headimg;
     }
     this.on('hidden', () => {
       this._eventsHolder.forEach((subscription: Subscription) => {

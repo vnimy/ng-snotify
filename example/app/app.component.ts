@@ -38,6 +38,7 @@ export class AppComponent {
       }
     });
     return {
+      headimg: '/assets/snotify-img/01.png',
       bodyMaxLength: this.bodyMaxLength,
       titleMaxLength: this.titleMaxLength,
       backdrop: this.backdrop,

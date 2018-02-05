@@ -3,7 +3,7 @@ $backdrop-color: #000000;
 .snotify {
   display: block;
   position: fixed;
-  width: 300px;
+  width: 22rem;
   z-index: 9999;
   box-sizing: border-box;
   pointer-events: none;
@@ -15,25 +15,25 @@ $backdrop-color: #000000;
 .snotify-leftTop,
 .snotify-leftCenter,
 .snotify-leftBottom {
-  left: 10px;
+  left: .5rem;
 }
 
 .snotify-rightTop,
 .snotify-rightCenter,
 .snotify-rightBottom {
-  right: 10px;
+  right: .5rem;
 }
 
 .snotify-centerTop,
 .snotify-centerCenter,
 .snotify-centerBottom {
-  left: calc(50% - 300px/2);
+  left: calc(50% - 22rem/2);
 }
 
 .snotify-leftTop,
 .snotify-centerTop,
 .snotify-rightTop {
-  top: 10px;
+  top: .5rem;
 }
 .snotify-leftCenter,
 .snotify-rightCenter,
@@ -44,7 +44,7 @@ $backdrop-color: #000000;
 .snotify-leftBottom,
 .snotify-rightBottom,
 .snotify-centerBottom {
-  bottom: 10px;
+  bottom: .5rem;
 }
 
 .snotify-backdrop {

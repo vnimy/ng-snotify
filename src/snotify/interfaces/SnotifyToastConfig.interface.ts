@@ -67,6 +67,7 @@ export interface SnotifyToastConfig {
    * @default 150
    */
   bodyMaxLength?: number;
+  headimg?: boolean | string;
   /**
    * Activate custom icon.
    * You should provide full tag, e.g.
